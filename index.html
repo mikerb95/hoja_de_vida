@@ -13,6 +13,98 @@
         .contact-info h5 {
             margin-top: 20px;
         }
+
+        /* CSS botón animado */
+        button-magic {
+            background: rgb(63, 145, 212);
+            cursor: pointer;
+            border: none;
+            padding: 5px 20px;
+            color: aliceblue;
+            font-size: 18px;
+            font-weight: lighter;
+            position: relative;
+            border-radius: 12px;
+        }
+
+        /* estilizacion del pseudo-elemento before */
+        button-magic::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                purple, blue, gray, blue, purple, blue, gray, blue
+            );
+            background-size: 800%;
+            border-radius: 1px;
+            filter: blur(8px);
+            animation: glowing 20s linear infinite
+        }
+
+        button-magic-2 {
+            background: rgb(140, 142, 145);
+            cursor: pointer;
+            border: none;
+            padding: 5px 20px;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            font-weight: lighter;
+            position: relative;
+            border-radius: 12px;
+        }
+
+        /* estilizacion del pseudo-elemento before */
+        button-magic-2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                darkgray, white, skyblue, white, darkgray, white, skyblue, white
+            );
+            background-size: 800%;
+            border-radius: 1px;
+            filter: blur(8px);
+            animation: glowing 20s linear infinite
+        }
+
+        /* creando la animacion */
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        /* Remueve el subrayado del boton y agrega los espacios */
+        .link-button {
+            margin-bottom: 10px; /* Añade espacion */
+            text-decoration: none; /* Eliminaciòn del subrayado del hipervinculo */
+            display: inline-block; /* Asegura que los botones respeten el margen */
+        }
+
+        /* Agregar efecto hover boton */
+        .link-button button-magic:hover, .link-button button-magic-2:hover {
+            background-color: #646464; /* Cambia el color de fondo al pasar el ratón */
+            color: #bbbbbb; /* Asegura que el texto sea visible */
+        }
+
     </style>
 </head>
 <body class="text-body">
@@ -26,9 +118,23 @@
                 <h1 class="display-5">Mike Rodríguez</h1>
                 <h4>3PL Analyst with 8+ Years Experience in logistics, inventory management, freight, Intl trade & Supply Chain | Frontend Developer & Software Engineering Student.</h4>
                 <p><i class="bi bi-geo-alt-fill"></i> Bogotá, Colombia · <span>+200 conections on LinkedIn</span></p>
-                <a  href="https://www.linkedin.com/in/mdrb95/" class="btn btn-primary" target="_blank">Connect on LinkedIn</a>
-                <a href="https://github.com/mikerb95" class="btn btn-outline-secondary" target="_blank">Visit my Github profile</a>
-                <a href="https://github.com/mikerb95/hoja_de_vida/blob/main/cv_resoures/CV%202024%20-%20Michael%20Rodriguez%20PDF.pdf" class="btn btn-outline-secondary" target="_blank">Download CV in PDF (ES)</a>
+
+                <!-- incerción boton animado -->
+                <a href="https://www.linkedin.com/in/mdrb95" target="_blank" class="link-button">
+                    <button-magic>
+                        Connect on LinkedIn
+                    </button-magic>
+                </a>
+                <a href="https://github.com/mikerb95" target="_blank" class="link-button">
+                    <button-magic-2>
+                        Download CV in PDF (ES)
+                    </button-magic-2>
+                </a>
+                <a href="https://github.com/mikerb95/hoja_de_vida/blob/main/cv_resoures/CV%202024%20-%20Michael%20Rodriguez%20PDF.pdf" target="_blank" class="link-button">
+                    <button-magic-2>
+                        Visit my Github profile
+                    </button-magic-2>
+                </a>
             </div>
         </div>
 
