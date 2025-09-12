@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
-        body {
+    body {
             background-color: #dae2e9;
         }
         
@@ -102,6 +102,35 @@
             display: inline-block; /* Asegura que los botones respeten el margen */
         }
 
+        /* Perfil: evitar superposición del texto sobre la foto en pantallas medianas */
+        .header-row {
+            align-items: center; /* Alinea verticalmente columnas */
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Ajustes para pantallas medianas y pequeñas */
+        @media (max-width: 991.98px) {
+            .profile-img {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .profile-img {
+                width: 110px;
+                height: 110px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
         /* Agregar efecto hover boton */
         .link-button button-magic:hover, .link-button button-magic-2:hover {
             background-color: #646464; /* Cambia el color de fondo al pasar el ratón */
@@ -113,9 +142,9 @@
 <body class="text-body">
     <div class="container mt-5">
         <!-- Encabezado del perfil -->
-        <div class="row">
+        <div class="row header-row">
             <div class="col-md-3 text-center">
-                <img src="cv_resoures/profile_linkedin.jpg" class="rounded-circle" alt="Foto de perfil">
+                <img src="cv_resoures/profile_linkedin.jpg" class="rounded-circle profile-img" alt="Foto de perfil">
             </div>
             <div class="col-md-9">
                 <h1 class="display-5">Mike Rodríguez</h1>
