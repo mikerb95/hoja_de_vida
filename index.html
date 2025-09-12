@@ -139,54 +139,6 @@
             }
         }
 
-        /* En pantallas medianas (md) colocar los 3 botones en una fila horizontal centrada
-           y asegurarse que aparezcan debajo de la foto y el headline. Solo afecta 768-991.98px. */
-        @media (min-width: 768px) and (max-width: 991.98px) {
-            /* Hacemos que los botones floten en una fila y se centren */
-            .link-buttons-row {
-                display: flex;
-                gap: 12px;
-                justify-content: center;
-                flex-wrap: nowrap;
-                margin-top: 12px;
-            }
-
-            /* Asegurar que el contenedor de los botones ocupe toda la fila */
-            .link-buttons-row .link-button {
-                display: inline-flex;
-            }
-
-            /* Forzar que el bloque de encabezado muestre primero la imagen y el texto,
-               y luego los botones en línea (usando order y anchura completa para la fila de botones) */
-            .header-row > .col-md-3 { order: 1; }
-            .header-row > .col-md-9 { order: 2; }
-            /* Hacer que el contenedor de botones ocupe 100% y quede debajo */
-            .link-buttons-wrapper { order: 3; width: 100%; display: block; margin-top: 12px; }
-            .link-buttons-row { justify-content: center; }
-        }
-
-        /* Asegurar que en pantallas fuera del rango md la posición de los botones no cambie */
-        @media (max-width: 767.98px), (min-width: 992px) {
-            .link-buttons-wrapper { display: block; width: auto; margin-top: 0; }
-            .link-buttons-row { display: block; gap: 0; justify-content: flex-start; }
-            .link-buttons-row .link-button { display: inline-block; margin-right: 8px; }
-        }
-
-        /* Restaurar visualmente la posición original en pantallas grandes: alinear
-           los botones con la columna de texto (col-md-9) sin alterar md/sm behavior. */
-        @media (min-width: 992px) {
-            /* Usamos un contenedor flex para desplazar los botones a la derecha y mantener el espaciado */
-            .link-buttons-wrapper {
-                display: flex;
-                justify-content: flex-start;
-                /* margin-left aproximado para alinear con la columna de texto en este layout */
-                margin-left: 220px; /* ajustable si quieres mover más/menos */
-                margin-top: 18px;
-            }
-            .link-buttons-row { display: flex; gap: 12px; }
-            .link-buttons-row .link-button { display: inline-flex; }
-        }
-
         /* Agregar efecto hover boton */
         .link-button button-magic:hover, .link-button button-magic-2:hover {
             background-color: #646464; /* Cambia el color de fondo al pasar el ratón */
@@ -206,13 +158,8 @@
                 <h1 class="display-5">Mike Rodríguez</h1>
                 <h4>3PL Analyst with 8+ Years Experience in logistics, inventory management, freight, Intl trade & Supply Chain | Frontend Developer & Software Engineering Student.</h4>
                 <p><i class="bi bi-geo-alt-fill"></i> Bogotá, Colombia · <span>+200 conections on LinkedIn</span></p>
-                
-            </div>
-        </div>
 
-        <!-- incerción boton animado (fuera de header-row para poder colocarlos debajo en md) -->
-        <div class="link-buttons-wrapper">
-            <div class="link-buttons-row">
+                <!-- incerción boton animado -->
                 <a href="https://www.linkedin.com/in/mdrb95" target="_blank" rel="noopener noreferrer" class="link-button">
                     <span class="button-magic">Connect on LinkedIn</span>
                 </a>
@@ -333,25 +280,6 @@
                                 <h5 class="card-title">Administracion de empresas</h5>
                             <h6 class="card-subtitle text-muted">Politécnico Grancolombiano</h6>
                             <p class="card-text">2020 - 2021 (postponed)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-                <div class="row mt-4">
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-2 d-flex align-items-center justify-content-center">
-                            <img src="cv_resoures/SENA.png" class="img-fluid rounded-start" alt="Logo de la institución"  width="100" height="100">
-                        </div>
-                        <div class="col-md-10">
-                            <div class="card-body">
-                                <h5 class="card-title">Tecnologo en Analisis y Desarrollo de Software</h5>
-                            <h6 class="card-subtitle text-muted">Servicio Nacional de Aprendizaje SENA</h6>
-                            <p class="card-text">2024 - 2026 (Expected)</p>
                             </div>
                         </div>
                     </div>
