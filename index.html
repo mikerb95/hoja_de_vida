@@ -172,6 +172,21 @@
             .link-buttons-row .link-button { display: inline-block; margin-right: 8px; }
         }
 
+        /* Restaurar visualmente la posición original en pantallas grandes: alinear
+           los botones con la columna de texto (col-md-9) sin alterar md/sm behavior. */
+        @media (min-width: 992px) {
+            /* Usamos un contenedor flex para desplazar los botones a la derecha y mantener el espaciado */
+            .link-buttons-wrapper {
+                display: flex;
+                justify-content: flex-start;
+                /* margin-left aproximado para alinear con la columna de texto en este layout */
+                margin-left: 220px; /* ajustable si quieres mover más/menos */
+                margin-top: 18px;
+            }
+            .link-buttons-row { display: flex; gap: 12px; }
+            .link-buttons-row .link-button { display: inline-flex; }
+        }
+
         /* Agregar efecto hover boton */
         .link-button button-magic:hover, .link-button button-magic-2:hover {
             background-color: #646464; /* Cambia el color de fondo al pasar el ratón */
