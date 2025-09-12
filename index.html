@@ -157,11 +157,19 @@
             }
 
             /* Forzar que el bloque de encabezado muestre primero la imagen y el texto,
-               y luego los botones en línea (usando orden y anchura completa para la fila de botones) */
+               y luego los botones en línea (usando order y anchura completa para la fila de botones) */
             .header-row > .col-md-3 { order: 1; }
             .header-row > .col-md-9 { order: 2; }
             /* Hacer que el contenedor de botones ocupe 100% y quede debajo */
-            .header-row .link-buttons-wrapper { order: 3; width: 100%; }
+            .link-buttons-wrapper { order: 3; width: 100%; display: block; margin-top: 12px; }
+            .link-buttons-row { justify-content: center; }
+        }
+
+        /* Asegurar que en pantallas fuera del rango md la posición de los botones no cambie */
+        @media (max-width: 767.98px), (min-width: 992px) {
+            .link-buttons-wrapper { display: block; width: auto; margin-top: 0; }
+            .link-buttons-row { display: block; gap: 0; justify-content: flex-start; }
+            .link-buttons-row .link-button { display: inline-block; margin-right: 8px; }
         }
 
         /* Agregar efecto hover boton */
@@ -183,21 +191,22 @@
                 <h1 class="display-5">Mike Rodríguez</h1>
                 <h4>3PL Analyst with 8+ Years Experience in logistics, inventory management, freight, Intl trade & Supply Chain | Frontend Developer & Software Engineering Student.</h4>
                 <p><i class="bi bi-geo-alt-fill"></i> Bogotá, Colombia · <span>+200 conections on LinkedIn</span></p>
+                
+            </div>
+        </div>
 
-                <!-- incerción boton animado -->
-                <div class="link-buttons-wrapper">
-                    <div class="link-buttons-row">
-                        <a href="https://www.linkedin.com/in/mdrb95" target="_blank" rel="noopener noreferrer" class="link-button">
-                            <span class="button-magic">Connect on LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/mikerb95" target="_blank" rel="noopener noreferrer" class="link-button">
-                            <span class="button-magic-2">Visit my GitHub profile</span>
-                        </a>
-                        <a href="cv_resoures/CV%202024%20-%20Michael%20Rodriguez%20PDF.pdf" target="_blank" rel="noopener noreferrer" class="link-button">
-                            <span class="button-magic-2">Download CV (PDF)</span>
-                        </a>
-                    </div>
-                </div>
+        <!-- incerción boton animado (fuera de header-row para poder colocarlos debajo en md) -->
+        <div class="link-buttons-wrapper">
+            <div class="link-buttons-row">
+                <a href="https://www.linkedin.com/in/mdrb95" target="_blank" rel="noopener noreferrer" class="link-button">
+                    <span class="button-magic">Connect on LinkedIn</span>
+                </a>
+                <a href="https://github.com/mikerb95" target="_blank" rel="noopener noreferrer" class="link-button">
+                    <span class="button-magic-2">Visit my GitHub profile</span>
+                </a>
+                <a href="cv_resoures/CV%202024%20-%20Michael%20Rodriguez%20PDF.pdf" target="_blank" rel="noopener noreferrer" class="link-button">
+                    <span class="button-magic-2">Download CV (PDF)</span>
+                </a>
             </div>
         </div>
 
