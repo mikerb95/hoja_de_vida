@@ -139,6 +139,31 @@
             }
         }
 
+        /* En pantallas medianas (md) colocar los 3 botones en una fila horizontal centrada
+           y asegurarse que aparezcan debajo de la foto y el headline. Solo afecta 768-991.98px. */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            /* Hacemos que los botones floten en una fila y se centren */
+            .link-buttons-row {
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                flex-wrap: nowrap;
+                margin-top: 12px;
+            }
+
+            /* Asegurar que el contenedor de los botones ocupe toda la fila */
+            .link-buttons-row .link-button {
+                display: inline-flex;
+            }
+
+            /* Forzar que el bloque de encabezado muestre primero la imagen y el texto,
+               y luego los botones en línea (usando orden y anchura completa para la fila de botones) */
+            .header-row > .col-md-3 { order: 1; }
+            .header-row > .col-md-9 { order: 2; }
+            /* Hacer que el contenedor de botones ocupe 100% y quede debajo */
+            .header-row .link-buttons-wrapper { order: 3; width: 100%; }
+        }
+
         /* Agregar efecto hover boton */
         .link-button button-magic:hover, .link-button button-magic-2:hover {
             background-color: #646464; /* Cambia el color de fondo al pasar el ratón */
@@ -160,15 +185,19 @@
                 <p><i class="bi bi-geo-alt-fill"></i> Bogotá, Colombia · <span>+200 conections on LinkedIn</span></p>
 
                 <!-- incerción boton animado -->
-                <a href="https://www.linkedin.com/in/mdrb95" target="_blank" rel="noopener noreferrer" class="link-button">
-                    <span class="button-magic">Connect on LinkedIn</span>
-                </a>
-                <a href="https://github.com/mikerb95" target="_blank" rel="noopener noreferrer" class="link-button">
-                    <span class="button-magic-2">Visit my GitHub profile</span>
-                </a>
-                <a href="cv_resoures/CV%202024%20-%20Michael%20Rodriguez%20PDF.pdf" target="_blank" rel="noopener noreferrer" class="link-button">
-                    <span class="button-magic-2">Download CV (PDF)</span>
-                </a>
+                <div class="link-buttons-wrapper">
+                    <div class="link-buttons-row">
+                        <a href="https://www.linkedin.com/in/mdrb95" target="_blank" rel="noopener noreferrer" class="link-button">
+                            <span class="button-magic">Connect on LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/mikerb95" target="_blank" rel="noopener noreferrer" class="link-button">
+                            <span class="button-magic-2">Visit my GitHub profile</span>
+                        </a>
+                        <a href="cv_resoures/CV%202024%20-%20Michael%20Rodriguez%20PDF.pdf" target="_blank" rel="noopener noreferrer" class="link-button">
+                            <span class="button-magic-2">Download CV (PDF)</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
